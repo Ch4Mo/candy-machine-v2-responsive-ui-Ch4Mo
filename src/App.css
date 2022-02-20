@@ -1,25 +1,24 @@
 /* Customize your main colors in :root variables */
 :root {
-  --main-background-color: #343A50;
-  --card-background-color: #51576D;
+  --main-background-color: #00000000;
+  --card-background-color: #51576d00;
   --card-background-lighter-color: #7A7F92;
   --main-text-color:#F7F6F4;
-  --title-text-color:#3CBA8B;
+  --title-text-color:#7d2569;
 }
 
 body{
   background-color:var(--main-background-color);
-  font-family: 'Patrick Hand', cursive;
+  font-family: Verdana, Geneva, Tahoma, sans-serif, cursive;
   font-size: 1.2em;
 }
 
 h2, p{
   color: var(--main-text-color);
+  text-align: center;
 }
 
 h3{
 font-weight: normal;
 }
-
-
 

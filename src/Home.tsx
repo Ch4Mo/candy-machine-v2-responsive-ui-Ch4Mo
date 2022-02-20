@@ -65,7 +65,7 @@ const Wallet = styled.ul`
 const ConnectButton = styled(WalletMultiButton)`
   border-radius: 18px !important;
   padding: 6px 16px;
-  background-color: #4E44CE;
+  background-color: #7d2569;
   margin: 0 auto;
 `;
 
@@ -90,7 +90,7 @@ const Card = styled(Paper)`
 
 const MintButtonContainer = styled.div`
   button.MuiButton-contained:not(.MuiButton-containedPrimary).Mui-disabled {
-    color: #464646;
+    color: white;
   }
 
   button.MuiButton-contained:not(.MuiButton-containedPrimary):hover,
@@ -205,7 +205,10 @@ const Price = styled(Chip)`
 const Image = styled.img`
   height: 400px;
   width: auto;
-  border-radius: 7px;
+  border-radius: 0px;
+  border: solid;
+  border-width: 20px;
+  border-color: #390e49;
   box-shadow: 5px 5px 40px 5px rgba(0,0,0,0.5);
 `;
 
@@ -243,7 +246,8 @@ const ShimmerTitle = styled.h1`
 `;
 
 const GoldTitle = styled.h2`
-  color: var(--title-text-color);
+  color: white;
+  margin: 50px auto;
 `;
 
 const LogoAligner = styled.div`
@@ -398,6 +402,7 @@ const Home = (props: HomeProps) => {
     const onMint = async () => {
         try {
             setIsMinting(true);
+            document.getElementById('#identity')?.click();
             if (wallet && candyMachine?.program && wallet.publicKey) {
                 const mint = anchor.web3.Keypair.generate();
                 const mintTxId = (
@@ -482,15 +487,15 @@ const Home = (props: HomeProps) => {
         <main>
             <MainContainer>
                 <WalletContainer>
-                    <Logo><a href="http://localhost:3000/" target="_blank" rel="noopener noreferrer"><img alt=""
-                                                                                                          src="logo.png"/></a></Logo>
+                    <Logo><a href="https://www.soldrinks.xyz" target="_blank" rel="noopener noreferrer"><img alt=""
+                                                                                                          src="logosd.png"/></a></Logo>
                     <Menu>
-                        <li><a href="http://localhost:3000/" target="_blank" rel="noopener noreferrer">Menu 1</a>
+                        <li><a href="https://discord.gg/XcgHF2HDH3" target="_blank" rel="noopener noreferrer"><img alt=""
+                                                                                                          src="discord_white.png"/></a>
                         </li>
-                        <li><a href="http://localhost:3000/" target="_blank"
-                               rel="noopener noreferrer">Menu 2</a></li>
-                        <li><a href="http://localhost:3000/" target="_blank"
-                               rel="noopener noreferrer">Menu 3</a></li>
+                        <li><a href="https://twitter.com/sol_drinks" target="_blank" rel="noopener noreferrer"><img alt=""
+                                                                                                          src="twitter_white.png"/></a></li>
+
                     </Menu>
                     <Wallet>
                         {wallet ?
@@ -498,20 +503,33 @@ const Home = (props: HomeProps) => {
                             <ConnectButton>Connect Wallet</ConnectButton>}
                     </Wallet>
                 </WalletContainer>
-                <ShimmerTitle>MINT IS LIVE !</ShimmerTitle>
+                <ShimmerTitle></ShimmerTitle>
                 <br/>
 
 
                 <MintContainer>
                     <DesContainer>
-                        <NFT elevation={3}>
-                            <h2>My NFT</h2>
+                        <NFT elevation={0}>
+
                             <br/>
                             <div><Price
                                 label={isActive && whitelistEnabled && (whitelistTokenBalance > 0) ? (whitelistPrice + " " + priceLabel) : (price + " " + priceLabel)}/><Image
-                                src="cool-cats.gif"
+                                src="soldrinks.gif"
                                 alt="NFT To Mint"/></div>
                             <br/>
+                            
+                        </NFT>
+                    </DesContainer>
+                    <DesContainer>
+                        <Des elevation={0}>
+                            <LogoAligner><GoldTitle>MINT A SOLDRINKS</GoldTitle></LogoAligner>
+                            <p>CONNECT YOUR WALLET TO GET YOUR SOLDRINKS.</p>
+
+                                
+                        </Des>
+                        <NFT elevation={0}>
+
+
                             {wallet && isActive && whitelistEnabled && (whitelistTokenBalance > 0) &&
                               <h3>You have {whitelistTokenBalance} whitelist mint(s) remaining.</h3>}
                             {wallet && isActive &&
@@ -576,35 +594,8 @@ const Home = (props: HomeProps) => {
                               <SolExplorerLink href={solanaExplorerLink} target="_blank">View on Solana
                                 Explorer</SolExplorerLink>}
                         </NFT>
-                    </DesContainer>
-                    <DesContainer>
-                        <Des elevation={2}>
-                            <LogoAligner><img src="logo.png" alt=""></img><GoldTitle>TITLE 1</GoldTitle></LogoAligner>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt.</p>
-                        </Des>
-                        <Des elevation={2}>
-                            <LogoAligner><img src="logo.png" alt=""></img><GoldTitle>TITLE 2</GoldTitle></LogoAligner>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt.</p>
-                        </Des>
-                        <Des elevation={2}>
-                            <LogoAligner><img src="logo.png" alt=""></img><GoldTitle>TITLE 3</GoldTitle></LogoAligner>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt.</p>
-                        </Des>
+
+
                     </DesContainer>
                 </MintContainer>
             </MainContainer>
