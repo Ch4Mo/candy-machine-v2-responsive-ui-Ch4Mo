@@ -487,13 +487,13 @@ const Home = (props: HomeProps) => {
         <main>
             <MainContainer>
                 <WalletContainer>
-                    <Logo><a href="https://www.soldrinks.xyz" target="_blank" rel="noopener noreferrer"><img alt=""
-                                                                                                          src="logosd.png"/></a></Logo>
+                    <Logo><a href="" target="_blank" rel="noopener noreferrer"><img alt=""
+                                                                                                          src=""/></a></Logo>
                     <Menu>
-                        <li><a href="https://discord.gg/XcgHF2HDH3" target="_blank" rel="noopener noreferrer"><img alt=""
+                        <li><a href="http://discord.gg/alphasquad" target="_blank" rel="noopener noreferrer"><img alt=""
                                                                                                           src="discord_white.png"/></a>
                         </li>
-                        <li><a href="https://twitter.com/sol_drinks" target="_blank" rel="noopener noreferrer"><img alt=""
+                        <li><a href="https://twitter.com/AlphaSquad_NFT" target="_blank" rel="noopener noreferrer"><img alt=""
                                                                                                           src="twitter_white.png"/></a></li>
 
                     </Menu>
@@ -514,7 +514,7 @@ const Home = (props: HomeProps) => {
                             <br/>
                             <div><Price
                                 label={isActive && whitelistEnabled && (whitelistTokenBalance > 0) ? (whitelistPrice + " " + priceLabel) : (price + " " + priceLabel)}/><Image
-                                src="soldrinks.gif"
+                                src="AlphaMintGIF.gif"
                                 alt="NFT To Mint"/></div>
                             <br/>
                             
@@ -522,8 +522,10 @@ const Home = (props: HomeProps) => {
                     </DesContainer>
                     <DesContainer>
                         <Des elevation={0}>
-                            <LogoAligner><GoldTitle>MINT A SOLDRINKS</GoldTitle></LogoAligner>
-                            <p>CONNECT YOUR WALLET TO GET YOUR SOLDRINKS.</p>
+                            <LogoAligner><GoldTitle>MINT AN ALPHA</GoldTitle></LogoAligner>
+                            <p>700 Alphas form the genesis collection of The Alpha Squad.</p>
+                            <p>CONNECT YOUR WALLET TO GET YOUR ALPHA.</p>
+
 
                                 
                         </Des>
