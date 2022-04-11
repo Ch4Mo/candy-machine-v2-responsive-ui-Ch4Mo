@@ -207,8 +207,8 @@ const Image = styled.img`
   width: auto;
   border-radius: 0px;
   border: solid;
-  border-width: 20px;
-  border-color: #390e49;
+  border-width: 10px;
+  border-color: #7d2569;
   box-shadow: 5px 5px 40px 5px rgba(0,0,0,0.5);
 `;
 
